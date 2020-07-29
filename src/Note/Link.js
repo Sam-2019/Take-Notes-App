@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useMutation, useQuery} from '@apollo/client';
+import { useMutation, useQuery, gql} from '@apollo/client';
 
 import ViewNotes from "./View_hook";
 
