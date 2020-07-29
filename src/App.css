@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+:root {
+  --main-color: #ee6e73;
+  --second-color: #333;
+  --input-color: #9e9e9e;
+  --primary: #007bff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.desktop {
+  width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20%;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.float {
+  background-color: transparent;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-size: 1.5em;
+  font-weight: 300;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 11;
+  color: #1973d3;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.float:hover {
+  opacity: 1;
+  color: var(--primary);
 }
 
-.App-link {
-  color: #61dafb;
+.backdrop {
+  background-color: #000000bf;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: all ease-in-out 60s;
+  transition: all ease-in-out 60s;
+  z-index: 11;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inner {
+  border-radius: 1rem 1rem 1rem 1rem;
+  background-color: #343a40;
+  position: fixed;
+  top: 200px;
+  left: 8%;
+  right: 8%;
+  height: auto;
+  padding: 27px;
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
+}
+
+input {
+  padding: 0px 15px 15px 15px;
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
+}
+
+textarea {
+  padding: 15px 15px 0px 15px;
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
+}
+
+.input-control {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--input-color);
+  color: whitesmoke;
+  font-weight: 300;
+  font-size: 16px;
+  display: block;
+  outline: none;
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
+}
+
+.input-control:active,
+.input-control:focus {
+  border-bottom: 1px solid var(--primary);
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
 }
