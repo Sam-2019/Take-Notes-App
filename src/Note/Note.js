@@ -1,9 +1,6 @@
 import React from "react";
 
 import Nav from "./Nav";
-import Link from "./Link";
-import ViewNotes from './View_hook2'
-import ViewNote from './View_hook'
 
 const Note = () => {
   return (
@@ -23,7 +20,7 @@ const Note = () => {
         <Nav />
         <div className="container col-12 col-md-5 ">
   
-          <Link />
+          Hello
         </div>
       </div>
     </>
