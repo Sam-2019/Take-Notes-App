@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Mutation } from "@apollo/react-components";
-import gql from "graphql-tag";
+import { useMutation, useQuery} from '@apollo/client';
 
 import ViewNotes from "./View_hook";
 
