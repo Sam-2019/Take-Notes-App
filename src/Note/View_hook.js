@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Query } from "@apollo/react-components";
+import { useMutation, useQuery} from '@apollo/client';
 
 import "./item.css";
 
