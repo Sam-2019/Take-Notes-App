@@ -1,0 +1,36 @@
+.view {
+  padding: 12px;
+  border: 0.5px solid #f1f1f1db;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+}
+
+.view:hover,
+.view:active,
+.view:focus {
+  border: 0px solid #e9e9e9db;
+}
+
+.view:hover,
+.view:active,
+.view:focus {
+  border: 0px solid #e9e9e9db;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+}
+
+.view:hover,
+.view:active,
+.view:focus {
+  border: solid #e9e9e9db;
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+<div className="grid-container2 shadow" onClick={Show}>
+<div className="view p-3" key={props.key}>
+  <h5 className="text-center"> {props.title}</h5>
+</div>
+</div>

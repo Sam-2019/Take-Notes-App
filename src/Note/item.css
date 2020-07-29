@@ -1,0 +1,107 @@
+
+
+.wake {
+  width: 91.5vw;
+}
+
+.main {
+  word-wrap: break-word;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  height: auto;
+}
+
+.dark {
+  background-color: #343a40;
+  color: #c0bebe;
+  font-weight: 350;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+.sticky {
+  background-color: #343a40;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0em;
+  padding: 15px 0px 0px 0px;
+  
+}
+
+.head {
+  font-size: 25px;
+  padding: 0 0px 15px 0px ;
+  max-width: 9em;
+}
+
+.detail {
+  padding: 0 15px 15px 0px ;
+
+}
+
+.slideLeft {
+  z-index: 49;
+  background-color: #343a40;
+  height: auto;
+  width: 100vw;
+  -webkit-transition: margin 0.5s;
+  transition: margin 0.5s;
+  margin: 0 0 0 100vh;
+  position: fixed;
+  top: 10%;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  padding: 0em 1.5em 1.5em 1.5em;
+  border: solid #8d8d8d74;
+  border-width: 0.1em 0 0 0;
+  border-radius: 1rem 1rem 0rem 0rem;
+  overflow: scroll;
+}
+
+.slideLeft.is-slideLeft-open {
+  margin-left: 0;
+}
+
+.slideLeft::-webkit-scrollbar {
+  display: none;
+}
+
+.sticky_top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 49;
+}
+
+.view {
+  padding: 12px;
+  border: 0.5px solid #f1f1f1db;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
+}
+
+.view:hover,
+.view:active,
+.view:focus {
+  border: solid #e9e9e9db;
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.btn-group{
+  display: block;
+  width: 102%;
+  padding: 15px 0px 0px 0px ;
+}
+
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+}
