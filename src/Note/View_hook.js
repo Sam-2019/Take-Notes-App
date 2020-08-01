@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { gql, useQuery, useMutation } from "@apollo/client";
+import { gql, useMutation } from "@apollo/client";
 
 import "./item.css";
 
@@ -9,14 +9,6 @@ const NOTES_QUERY = gql`
       _id
       title
       detail
-    }
-  }
-`;
-
-const UPDATE_NOTE = gql`
-  mutation Note($_id: ID!, $title: String!, $detail: String!) {
-    updateNote(_id: $_id, title: $title, detail: $detail) {
-      title
     }
   }
 `;

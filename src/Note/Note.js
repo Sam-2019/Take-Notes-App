@@ -2,7 +2,7 @@ import React from "react";
 
 import Nav from "./Nav";
 import Link from "./Link";
-import Edit from './Edit'
+
 
 const Note = () => {
   return (
