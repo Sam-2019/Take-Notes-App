@@ -1,7 +1,38 @@
+.item{
+  border: 1px solid #ff0000;
+}
 
+.logo2{
+  width: 45px;
+}
 
 .wake {
   width: 91.5vw;
+}
+
+.backdrop {
+  background-color: #000000bf;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: all ease-in-out 60s;
+  transition: all ease-in-out 60s;
+  z-index: 11;
+}
+
+.inner {
+  border-radius: 1rem 1rem 1rem 1rem;
+  background-color: #343a40;
+  position: fixed;
+  top: 200px;
+  left: 8%;
+  right: 8%;
+  height: auto;
+  padding: 27px;
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
 }
 
 .main {

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Mutation } from "@apollo/react-components";
-import gql from "graphql-tag";
+import { gql, useMutation } from "@apollo/client";
 
 import ViewNotes from "./View_hook";
 
@@ -9,6 +8,7 @@ import "./item.css";
 const NOTES_QUERY = gql`
   query {
     notes {
+      _id
       title
       detail
     }
@@ -58,6 +58,15 @@ const Create = () => {
     setDialog(false);
     setButton(true);
   }
+
+  const [addNote, { data }] = useMutation(NOTES_MUTATION, {
+    refetchQueries: [
+      {
+        query: NOTES_QUERY,
+      },
+    ],
+    awaitRefetchQueries: true,
+  });
   return (
     <>
       {button && (
@@ -71,46 +80,44 @@ const Create = () => {
         <div className="backdrop">
           <div className=" inner">
             <div className="text-right mt-1">
-              <Mutation
-                mutation={NOTES_MUTATION}
-                variables={{ title, detail, created_at, updated_at }}
-                refetchQueries={[{ query: NOTES_QUERY }]}
-                onCompleted={(data) => hide(data)}
-              >
-                {(mutation) => (
-                  <>
-                    <input
-                      type="text"
-                      className="input-control"
-                      onChange={(e) => setTitle(e.target.value)}
-                      placeholder="Title"
-                      value={title}
-                    />
+              <>
+                <input
+                  type="text"
+                  className="input-control"
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Title"
+                  value={title}
+                />
 
-                    <textarea
-                      type="text"
-                      className="input-control"
-                      onChange={(e) => setDetail(e.target.value)}
-                      value={detail}
-                      placeholder="Detail"
-                      required
-                    />
+                <textarea
+                  type="text"
+                  className="input-control"
+                  onChange={(e) => setDetail(e.target.value)}
+                  value={detail}
+                  placeholder="Detail"
+                  required
+                />
 
-                    <button
-                      className="btn  btn-outline-danger btn-sm mt-2 mr-2"
-                      onClick={hide}
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      className="btn btn-primary btn-sm  mt-2"
-                      onClick={mutation}
-                    >
-                      Add Post
-                    </button>
-                  </>
-                )}
-              </Mutation>
+                <button
+                  className="btn  btn-outline-danger btn-sm mt-2 mr-2"
+                  onClick={hide}
+                >
+                  Cancel
+                </button>
+                <button
+                  className="btn btn-primary btn-sm  mt-2"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    addNote({
+                      variables: { title, detail, created_at, updated_at },
+                    });
+
+                    hide();
+                  }}
+                >
+                  Add Post
+                </button>
+              </>
             </div>
           </div>
         </div>
