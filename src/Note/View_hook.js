@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { gql, useMutation } from "@apollo/client";
+import { gql, useMutation, useQuery} from "@apollo/client";
 
 import "./item.css";
 
