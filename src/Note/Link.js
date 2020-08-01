@@ -124,7 +124,7 @@ const Create = () => {
       )}
 
       <div>
-        <ViewNotes query={NOTES_QUERY} />
+        <ViewNotes />
       </div>
     </>
   );
