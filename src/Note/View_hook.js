@@ -13,7 +13,13 @@ const NOTES_QUERY = gql`
   }
 `;
 
-const UPDATE_NOTE = gql` mutation Note($_id: ID!, $title: String!, $detail: String!) { updateNote(_id: $_id, title: $title, detail: $detail) { title } } `;
+const UPDATE_NOTE = gql` 
+mutation Note($_id: ID!, $title: String!, $detail: String!) 
+{ updateNote(_id: $_id, title: $title, detail: $detail) 
+{ title
+detail
+ } } 
+`;
 
 const Main = () => {
   return (
