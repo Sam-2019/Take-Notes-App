@@ -21,7 +21,6 @@ const Note = () => {
       <div className="d-none d-block d-sm-none">
         <Nav />
         <div className="container col-12 col-md-5 ">
-  
           <Link />
         </div>
       </div>

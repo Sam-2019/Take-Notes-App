@@ -26,7 +26,7 @@
   border-radius: 1rem 1rem 1rem 1rem;
   background-color: #343a40;
   position: fixed;
-  top: 200px;
+  top: 35%;
   left: 8%;
   right: 8%;
   height: auto;
@@ -81,7 +81,7 @@
   transition: margin 0.5s;
   margin: 0 0 0 100vh;
   position: fixed;
-  top: 10%;
+  top: 15%;
   bottom: -1px;
   left: 0;
   right: 0;

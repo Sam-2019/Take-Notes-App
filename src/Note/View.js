@@ -1,13 +1,32 @@
-import React, { useRef } from "react";
-import { useQuery } from "@apollo/client";
-import Edit from './Edit'
+import React, { useRef, useState } from "react";
+import { gql, useQuery } from "@apollo/client";
 
 import "./item.css";
+
+const NOTES_QUERY = gql`
+  query {
+    notes {
+      _id
+      title
+      detail
+      created_at
+    }
+  }
+`;
+
+const UPDATE_NOTE = gql`
+  mutation Note($_id: ID!, $title: String!, $detail: String!) {
+    updateNote(_id: $_id, title: $title, detail: $detail) {
+      title
+    }
+  }
+`;
+
 
 const Main = (props) => {
   return (
     <div className=" main mt-3">
-      <List query={props.query} />
+      <List query={NOTES_QUERY} />
     </div>
   );
 };

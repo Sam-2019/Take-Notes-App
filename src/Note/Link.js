@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { gql, useMutation } from "@apollo/client";
 
-import ViewNotes from "./View_hook";
+import View from "./View";
+import Edit from './Edit'
 
 import "./item.css";
 
@@ -59,7 +60,7 @@ const Create = () => {
     setButton(true);
   }
 
-  const [addNote, { data }] = useMutation(NOTES_MUTATION, {
+  const [addNote] = useMutation(NOTES_MUTATION, {
     refetchQueries: [
       {
         query: NOTES_QUERY,
@@ -124,7 +125,7 @@ const Create = () => {
       )}
 
       <div>
-        <ViewNotes />
+        <Edit />
       </div>
     </>
   );
