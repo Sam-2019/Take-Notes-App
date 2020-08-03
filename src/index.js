@@ -6,18 +6,19 @@ import { ApolloProvider, gql, ApolloClient } from "@apollo/client";
 import { InMemoryCache } from "@apollo/client/cache";
 import * as serviceWorker from "./serviceWorker";
 
+/*
 const client = new ApolloClient({
   uri: 'https://v3jnt.sse.codesandbox.io/graphql',
   cache: new InMemoryCache()
 });  
+*/
 
 
-/*
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
   cache: new InMemoryCache(),
 });
-*/
+
 
 client
   .query({

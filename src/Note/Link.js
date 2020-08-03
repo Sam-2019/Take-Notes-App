@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { gql, useMutation } from "@apollo/client";
 
 import View from "./View";
-import Edit from './Edit'
+import Edit from "./Edit";
 
 import "./item.css";
 
@@ -99,25 +99,27 @@ const Create = () => {
                   required
                 />
 
-                <button
-                  className="btn  btn-outline-danger btn-sm mt-2 mr-2"
-                  onClick={hide}
-                >
-                  Cancel
-                </button>
-                <button
-                  className="btn btn-primary btn-sm  mt-2"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    addNote({
-                      variables: { title, detail, created_at, updated_at },
-                    });
+                <div className="mt-3">
+                  <button
+                    className="btn  btn-outline-danger btn-sm mr-2"
+                    onClick={hide}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    className="btn btn-primary btn-sm"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      addNote({
+                        variables: { title, detail, created_at, updated_at },
+                      });
 
-                    hide();
-                  }}
-                >
-                  Add Post
-                </button>
+                      hide();
+                    }}
+                  >
+                    Add Post
+                  </button>
+                </div>
               </>
             </div>
           </div>

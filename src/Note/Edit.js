@@ -22,6 +22,14 @@ const UPDATE_NOTE = gql`
   }
 `;
 
+const DELETE_NOTE = gql`
+  mutation Note($_id: ID!) {
+    deleteNote(_id: $_id) {
+      title
+    }
+  }
+`;
+
 const Main = () => {
   return (
     <div className=" main mt-3">
@@ -56,7 +64,14 @@ const EditPage = (props) => {
         query: NOTES_QUERY,
       },
     ],
-    awaitRefetchQueries: true,
+  });
+
+  const [deleteNote] = useMutation(DELETE_NOTE, {
+    refetchQueries: [
+      {
+        query: NOTES_QUERY,
+      },
+    ],
   });
   const _id = props.id;
   const [editBox, setEditBox] = useState(false);
@@ -83,8 +98,8 @@ const EditPage = (props) => {
   let inputTitle;
   let inputDetail;
   return (
-    <div className=" ">
-      <div className="p-2 bg-warning" onClick={Show}>
+    <div className="view ">
+      <div className="text-center" onClick={Show}>
         {props.title}
       </div>
 
@@ -92,31 +107,34 @@ const EditPage = (props) => {
         <div className="sticky ">
           <div className="d-flex justify-content-between bd-highlight ">
             <div className=" bd-highlight ">
-              <div className="text-warning"> {props.title}</div>
+              <div className="text-white"> {props.title}</div>
             </div>
 
-            <div className=" bd-highlight " onClick={Show}>
-              X
+            <div className=" bd-highlight close" onClick={Show}>
+              <span className="stack  ">
+                <i className="fa fa-close stack-1x">&times;</i>
+              </span>
             </div>
           </div>
         </div>
-        <div className="detail text-warning">
-          {props.detail}
-          <div>
-            <small className="text-muted">{props.created_at}</small>
+        <div className="detail text-white">
+          <div className="text-center  text-uppercase">{props.detail}</div>
+
+          <div className="text-muted text-right">
+            <small>{props.created_at}</small>
           </div>
 
           {editBox && (
             <div className="text-right mt-1">
               <input
-                className="input-control text-primary"
+                className="input-control"
                 ref={(node) => {
                   inputTitle = node;
                 }}
               />
 
               <textarea
-                className="input-control text-primary"
+                className="input-control textDetail"
                 ref={(node) => {
                   inputDetail = node;
                 }}
@@ -159,7 +177,18 @@ const EditPage = (props) => {
               >
                 Edit
               </button>
-              <button className="btn btn-outline-danger btn-sm ml-2" disabled>
+              <button
+                className="btn btn-outline-danger btn-sm  ml-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  deleteNote({
+                    variables: {
+                      _id,
+                    },
+                    onCompleted: { Show },
+                  });
+                }}
+              >
                 Delete
               </button>
             </div>

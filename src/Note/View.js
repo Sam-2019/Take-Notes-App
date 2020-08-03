@@ -14,16 +14,7 @@ const NOTES_QUERY = gql`
   }
 `;
 
-const UPDATE_NOTE = gql`
-  mutation Note($_id: ID!, $title: String!, $detail: String!) {
-    updateNote(_id: $_id, title: $title, detail: $detail) {
-      title
-    }
-  }
-`;
-
-
-const Main = (props) => {
+const Main = () => {
   return (
     <div className=" main mt-3">
       <List query={NOTES_QUERY} />
