@@ -2,6 +2,24 @@
   border: 1px solid #ff0000;
 }
 
+.addbtn {
+  background-color: transparent;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-size: 1.5em;
+  font-weight: 300;
+  position: fixed;
+  bottom: 3%;
+  right: 5%;
+  z-index: 11;
+  color: #32d319;
+}
+
+.addbtn:hover {
+  opacity: 1;
+  color: #007bff;
+}
+
 .logo2{
   width: 45px;
 }

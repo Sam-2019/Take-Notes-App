@@ -71,11 +71,15 @@ const Create = () => {
   return (
     <>
       {button && (
-        <span onClick={show} className="fa-stack fa-lg float">
-          <i className="fas fa-circle fa-stack-2x"></i>
-          <i className="fas fa-plus fa-stack-1x fa-inverse"></i>
-        </span>
+      <div className="addbtn text-right">
+      <span onClick={show} className="fa-stack fa-lg ">
+        <i className="fas fa-circle fa-stack-2x"></i>
+        <i className="fas fa-plus fa-stack-1x fa-inverse"></i>
+      </span>
+    </div>
       )}
+
+
 
       {dialog && (
         <div className="backdrop">
