@@ -112,7 +112,7 @@ const EditPage = (props) => {
 
             <div className=" bd-highlight close" onClick={Show}>
               <span className="stack  ">
-                <i className="fa fa-close stack-1x">&times;</i>
+                <i className="fa fa-close stack-1x"></i>
               </span>
             </div>
           </div>
