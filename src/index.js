@@ -8,7 +8,7 @@ import * as serviceWorker from "./serviceWorker";
 
 
 const client = new ApolloClient({
-  uri: 'https://q5dfh.sse.codesandbox.io/',
+  uri: 'https://q5dfh.sse.codesandbox.io/graphql',
   cache: new InMemoryCache()
 });  
 
