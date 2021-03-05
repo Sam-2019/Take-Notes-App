@@ -6,32 +6,27 @@ import { ApolloProvider, gql, ApolloClient } from "@apollo/client";
 import { InMemoryCache } from "@apollo/client/cache";
 import * as serviceWorker from "./serviceWorker";
 
+// const client = new ApolloClient({
+//   uri: 'https://q5dfh.sse.codesandbox.io/graphql',
+//   cache: new InMemoryCache()
+// });
 
-const client = new ApolloClient({
-  uri: 'https://q5dfh.sse.codesandbox.io/graphql',
-  cache: new InMemoryCache()
-});  
-
-
-/*
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
   cache: new InMemoryCache(),
 });
-*/
 
-client
-  .query({
-    query: gql`
-      {
-        notes {
-          title
-          detail
-        }
+client.query({
+  query: gql`
+    {
+      notes {
+        title
+        detail
       }
-    `,
-  })
-  .then((result) => console.log(result));
+    }
+  `,
+});
+// .then((result) => console.log(result));
 
 ReactDOM.render(
   <ApolloProvider client={client}>
